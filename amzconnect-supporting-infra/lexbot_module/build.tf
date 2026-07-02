@@ -14,16 +14,20 @@ while true
 do
 
 STATUS=$(aws lexv2-models describe-import \
+--region ${data.aws_region.current.name} \
 --import-id $IMPORT_ID \
 | jq -r '.importStatus')
 
 echo $STATUS
 
-if [ "$STATUS" = "Completed" ]
-then
-break
+if [ "$STATUS" = "Completed" ]; then
+    break
 fi
 
+if [ "$STATUS" = "Failed" ]; then
+    echo "Lex import failed."
+    exit 1
+fi
 sleep 20
 
 done

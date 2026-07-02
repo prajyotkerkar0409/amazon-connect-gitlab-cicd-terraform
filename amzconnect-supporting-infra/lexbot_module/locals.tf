@@ -6,7 +6,7 @@ locals {
 
   locale = "en_US"
 
-  alias_name = "TestBotAlias"
+  alias_name = var.bot_alias_name
 
   lambda_arn = var.lambda_arn
 

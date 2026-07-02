@@ -29,3 +29,9 @@ variable "locale_id" {
 variable "alias_name" {
   default = "TestBotAlias"
 }
+
+variable "bot_alias_name" {
+  description = "Lex Bot Alias"
+  type        = string
+  default     = "TestBotAlias"
+}

@@ -15,6 +15,7 @@ curl -X PUT \
 "$UPLOAD_URL"
 
 IMPORT_ID=$(aws lexv2-models start-import \
+--region ${data.aws_region.current.name}
 --payload file://upload.json \
 --merge-strategy Overwrite \
 --resource-specification file://resource.json \

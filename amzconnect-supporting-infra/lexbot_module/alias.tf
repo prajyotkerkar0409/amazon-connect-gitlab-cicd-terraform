@@ -13,6 +13,7 @@ echo "Creating Bot Version"
 echo "=============================="
 
 BOT_ID=$(aws lexv2-models list-bots \
+    --region ${data.aws_region.current.name}
     --query "botSummaries[?botName=='${var.bot_name}'].botId" \
     --output text)
 

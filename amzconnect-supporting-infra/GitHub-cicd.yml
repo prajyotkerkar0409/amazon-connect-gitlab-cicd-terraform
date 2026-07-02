@@ -29,7 +29,7 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: eu-west-2
   TF_ROOT: amzconnect-supporting-infra/terraform
 
 jobs:
@@ -75,7 +75,7 @@ jobs:
     strategy:
       matrix:
         region:
-          - us-east-1
+          - eu-west-2
 
     steps:
 
@@ -118,7 +118,7 @@ jobs:
     strategy:
       matrix:
         region:
-          - us-east-1
+          - eu-west-2
 
     steps:
 
@@ -171,7 +171,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-east-1
+          aws-region: eu-west-2
 
       - uses: actions/download-artifact@v4
         with:

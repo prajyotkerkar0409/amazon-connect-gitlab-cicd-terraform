@@ -1,88 +1,31 @@
-variable "lexbot_complete_name" {
-  type        = string
-  description = "Lex bot name for this resource"
+variable "bot_name" {
+  type = string
 }
 
-variable "lexbot_alias" {
-  type        = string
-  description = "Lex bot name for this resource"
+variable "description" {
+  type = string
 }
 
-variable "lexbot_languages" {
-  description = "list of anguage locales of the lex bot"
-  type        = list(string)
-  default     = ["en_US"]
+variable "lambda_arn" {
+  type = string
 }
 
-
-variable "idle_session_ttl_in_seconds" {
-  description = "IdleSessionTTLInSeconds of the resource"
-  type        = number
+variable "idle_session_ttl" {
+  type = number
 }
 
-
-variable "auto_build_bot_locales" {
-  description = "Specifies whether to build the bot locales after bot creation completes."
-  type        = bool
-  default     = true
+variable "role_arn" {
+  type = string
 }
 
-variable "lexbot_description" {
-  description = "Lex Bot Description"
-  type        = string
-  default     = ""
+variable "bot_zip_file" {
+  type = string
 }
 
-variable "lexbot_iam_base_name" {
-  description = "Lex Bot IAM base name"
-  type        = string
-  default     = ""
+variable "locale_id" {
+  default = "en_US"
 }
 
-variable "audio_log_bucket" {
-  description = "S3 bucket to store audio logs"
-  type        = string
-  default     = ""
-}
-
-variable "s3_obj_version_id" {
-  description = "new version of the s3 object triggers lex bot deployment"
-  type        = string
-  default     = ""
-}
-
-variable "s3_bucket" {
-  description = "location of s3 bucket where lexbot artifact is stored"
-  type        = string
-  default     = ""
-}
-
-variable "s3_object_key" {
-  description = "S3 key of lexbot artifact"
-  type        = string
-  default     = ""
-}
-
-variable "instance_arn" {
-  description = "Connect instance arn (used to attach lexbot)"
-  type        = string
-  default     = ""
-}
-
-variable "source_bot_version" {
-  type        = string
-  description = "source lex bot version number to base new version upon"
-  default     = "null"
-}
-
-variable "lambda_code_hook_arn" {
-  type        = string
-  description = "lambda codehook arn"
-  default     = null
-}
-
-variable "lambda_codehooks_by_locale" {
-  type        = map(string)
-  description = "Map of locale ID to Lambda codehook ARN"
-  default     = {}
+variable "alias_name" {
+  default = "TestBotAlias"
 }

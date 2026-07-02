@@ -1,0 +1,35 @@
+resource "terraform_data" "wait_import" {
+
+  depends_on = [
+    terraform_data.upload_zip
+  ]
+
+  provisioner "local-exec" {
+
+command = <<EOT
+
+IMPORT_ID=$(cat import.id)
+
+while true
+do
+
+STATUS=$(aws lexv2-models describe-import \
+--import-id $IMPORT_ID \
+| jq -r '.importStatus')
+
+echo $STATUS
+
+if [ "$STATUS" = "Completed" ]
+then
+break
+fi
+
+sleep 20
+
+done
+
+EOT
+
+  }
+
+}

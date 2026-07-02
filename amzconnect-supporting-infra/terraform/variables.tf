@@ -39,3 +39,8 @@ variable "role_arn" {
   type = string
 
 }
+
+variable "bot_zip_file" {
+  description = "Path to Lex Bot ZIP file"
+  type        = string
+}

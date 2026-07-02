@@ -12,6 +12,6 @@ module "lex_bot" {
 
   role_arn = var.role_arn
 
-  bot_zip_file = "../imports/resources/bots/elc-cce-bot-na.zip"
+  bot_zip_file = var.bot_zip_file
 
 }

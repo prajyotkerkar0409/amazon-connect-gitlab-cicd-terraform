@@ -5,3 +5,4 @@ idle_session_ttl_in_seconds = 300
 auto_build_bot_locales      = true
 lexbot_alias                = "current"
 source_bot_version          = "DRAFT"
+bot_zip_file = "../imports/resources/bots/elc-cce-bot-na.zip"

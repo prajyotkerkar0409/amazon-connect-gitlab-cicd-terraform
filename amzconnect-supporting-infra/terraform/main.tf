@@ -1,6 +1,6 @@
 module "lex_bot" {
 
-  source = "../modules/lex-bot"
+  source = "../lexbot_module"
 
   bot_name = var.bot_name
 
